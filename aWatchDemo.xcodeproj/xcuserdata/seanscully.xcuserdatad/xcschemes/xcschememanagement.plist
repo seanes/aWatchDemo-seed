@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>aWatchDemoWK (Notification).xcscheme</key>
+		<key>aWatchDemoWK (Complication).xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
+		</dict>
+		<key>aWatchDemoWK (Glance).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>aWatchDemoWK (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>aWatchDemoWK.xcscheme</key>
 		<dict>
@@ -22,6 +32,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>645AE1F91D113F2400B89924</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>645AE2211D113FAD00B89924</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>647C861A1D0854BA0037480B</key>
 		<dict>
 			<key>primary</key>

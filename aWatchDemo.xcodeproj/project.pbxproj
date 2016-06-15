@@ -25,6 +25,7 @@
 		647C865D1D08596A0037480B /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647C865A1D08596A0037480B /* SwiftyJSON.framework */; };
 		647C865E1D08596A0037480B /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 647C865A1D08596A0037480B /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		647C86611D08599D0037480B /* Discogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C86601D08599D0037480B /* Discogs.swift */; };
+		6486ADD21D1141270056C0F9 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486ADD11D1141270056C0F9 /* ComplicationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		647C86591D08596A0037480B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/watchOS/Alamofire.framework; sourceTree = "<group>"; };
 		647C865A1D08596A0037480B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/watchOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		647C86601D08599D0037480B /* Discogs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Discogs.swift; sourceTree = "<group>"; };
+		6486ADD11D1141270056C0F9 /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				647C86451D0854D60037480B /* InterfaceController.swift */,
+				6486ADD11D1141270056C0F9 /* ComplicationController.swift */,
 				647C86471D0854D60037480B /* ExtensionDelegate.swift */,
 				647C86491D0854D60037480B /* NotificationController.swift */,
 				647C864B1D0854D60037480B /* Assets.xcassets */,
@@ -336,6 +339,7 @@
 			files = (
 				647C86611D08599D0037480B /* Discogs.swift in Sources */,
 				647C864A1D0854D60037480B /* NotificationController.swift in Sources */,
+				6486ADD21D1141270056C0F9 /* ComplicationController.swift in Sources */,
 				647C86481D0854D60037480B /* ExtensionDelegate.swift in Sources */,
 				647C86461D0854D60037480B /* InterfaceController.swift in Sources */,
 			);
@@ -576,6 +580,7 @@
 				647C862F1D0854BA0037480B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		647C86511D0854D60037480B /* Build configuration list for PBXNativeTarget "aWatchDemoWK Extension" */ = {
 			isa = XCConfigurationList;
@@ -584,6 +589,7 @@
 				647C86531D0854D60037480B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		647C86551D0854D60037480B /* Build configuration list for PBXNativeTarget "aWatchDemoWK" */ = {
 			isa = XCConfigurationList;
@@ -592,6 +598,7 @@
 				647C86571D0854D60037480B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
