@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="aWatchDemoWK" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="Title" id="CXd-kn-cWG">
+                            <fontDescription key="font" type="boldSystem" pointSize="16"/>
+                        </label>
+                        <imageView alignment="left" id="MwK-Qa-TKZ"/>
+                        <label width="0.0" alignment="left" text="Description" numberOfLines="0" id="mxY-ZG-KxH">
+                            <color key="textColor" red="0.32230315040000002" green="0.60680094929999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="13"/>
+                        </label>
+                        <button width="1" alignment="left" title="Discography" id="v0g-Tp-1Ba">
+                            <connections>
+                                <action selector="discographyBtnClick" destination="AgC-eL-Hgc" id="pWU-Yi-CEv"/>
+                                <segue destination="7Mt-Ta-Jni" kind="push" id="VIq-Br-vxC"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="DescriptionText" destination="mxY-ZG-KxH" id="pdw-cm-S8R"/>
+                        <outlet property="ProfileImage" destination="MwK-Qa-TKZ" id="QvA-D1-tKD"/>
+                        <outlet property="TitleLabel" destination="CXd-kn-cWG" id="Eu3-eA-wjG"/>
+                        <outlet property="button" destination="v0g-Tp-1Ba" id="8Zb-nG-067"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Discography Interface Controller-->
+        <scene sceneID="7Kj-yM-COF">
+            <objects>
+                <controller id="7Mt-Ta-Jni" customClass="DiscographyInterfaceController" customModule="aWatchDemoWK_Extension">
+                    <items>
+                        <label alignment="center" id="RLh-0q-UZN">
+                            <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                        </label>
+                        <picker height="151" alignment="left" id="Jn4-GP-ZET">
+                            <connections>
+                                <action selector="pickItem:" destination="7Mt-Ta-Jni" id="Kkj-L3-So2"/>
+                            </connections>
+                        </picker>
+                    </items>
+                    <connections>
+                        <outlet property="headerLabel" destination="RLh-0q-UZN" id="5go-0b-tDe"/>
+                        <outlet property="picker" destination="Jn4-GP-ZET" id="Pgp-ph-JWy"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="473" y="344.75"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf" userLabel="myCategory"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="deW-i7-p1d">
+            <objects>
+                <glanceController topTemplateType="groupLeftSmall" bottomTemplateType="extraLargeLargeBody1Footer" id="I2L-O8-iQh" customClass="GlanceController" customModule="aWatchDemoWK_Extension">
+                    <items>
+                        <group alignment="left" id="idy-BR-D0b">
+                            <items>
+                                <imageView width="1" height="1" alignment="left" id="XBX-t7-fgJ"/>
+                            </items>
+                        </group>
+                        <label alignment="left" text="Label" id="jMh-0d-VXE"/>
+                        <label alignment="left" text="Label" id="1Un-E5-BPl"/>
+                        <label alignment="left" text="Label" id="dA0-4I-MNw"/>
+                        <label alignment="left" text="1234" id="yPS-4B-nQo"/>
+                        <label alignment="left" text="1234" id="KqX-yI-TJt"/>
+                        <label alignment="left" text="Label" id="gdF-NM-bOV"/>
+                        <label alignment="left" text="Footer" id="TYY-z6-kbx"/>
+                    </items>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="220" y="929"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="aWatchDemoWK" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="Label" id="d6d-LQ-LvX"/>
+                        <imageView alignment="left" image="kroeger_image" id="E5o-hc-hec">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </imageView>
+                    </items>
+                    <connections>
+                        <outlet property="label" destination="d6d-LQ-LvX" id="uT9-3S-3AZ"/>
+                        <outlet property="notificationImage" destination="E5o-hc-hec" id="Sgk-C5-82v"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
