@@ -7,17 +7,39 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WCSessionDelegate {
 
     let app = UIApplication.sharedApplication()
-
+    var session: WCSession?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if (WCSession.isSupported()) {
+            session = WCSession.defaultSession()
+            session?.delegate = self
+            session?.activateSession()
+        }
+    }
+    
     @IBAction func button(sender: AnyObject) {
         sendMessage("NICKELBACK!", body: "This is how you remind me ...")
     }
     
     @IBAction func button2(sender: AnyObject) {
         sendMessage("Kroeger!", body: "IT IS TIME, NICKELBACK TIME!")
+    }
+    
+    @IBAction func sendConnectivityMessage(sender: AnyObject) {
+        if let validSession = session {
+            do {
+                try validSession.updateApplicationContext(["message": Int(arc4random())])
+            } catch {
+                print("something went wrong")
+            }
+        }
     }
     
     func sendMessage(title: String, body: String) {
@@ -42,12 +64,6 @@ class ViewController: UIViewController {
         
         self.presentViewController(alertController, animated: true, completion: nil)
 
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {

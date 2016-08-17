@@ -9,14 +9,16 @@
 import WatchKit
 import Foundation
 import Alamofire
+import WatchConnectivity
 
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     @IBOutlet var button: WKInterfaceButton!
     @IBOutlet var TitleLabel: WKInterfaceLabel!
     @IBOutlet var DescriptionText: WKInterfaceLabel!
     
     var resourceURL = "";
+    let session = WCSession.defaultSession()
     
     override func contextForSegueWithIdentifier(segueIdentifier: String) ->
         AnyObject? {
@@ -26,6 +28,9 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var ProfileImage: WKInterfaceImage!
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        
+        session.delegate = self
+        session.activateSession()
         
         TitleLabel.setHidden(true)
         DescriptionText.setHidden(true)
@@ -64,6 +69,10 @@ class InterfaceController: WKInterfaceController {
                 
             }
         }
+    }
+    
+    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+        print(session.receivedApplicationContext["message"])
     }
     
     override func willActivate() {
