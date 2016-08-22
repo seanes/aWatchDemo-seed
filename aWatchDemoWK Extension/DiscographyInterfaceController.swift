@@ -7,3 +7,21 @@
 //
 
 import Foundation
+import WatchKit
+
+class DiscographyInterfaceController: WKInterfaceController {
+    
+    var albumReleases = NSMutableArray()
+
+    override func awakeWithContext(context: AnyObject?) {
+        super.awakeWithContext(context)
+        
+        // set title
+        
+        let resourceURL = context as! String
+        // get resource from ViewController
+
+        // Iterate through "releases" and map albums to pickerItems
+        
+    }
+}

@@ -9,42 +9,45 @@
 import WatchKit
 import Foundation
 import Alamofire
+import WatchConnectivity
 
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, WCSessionDelegate {
+    
+    var resourceURL = ""
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
+        
         Discogs().getArtist { (success, JSON) in
+            
             if (success) {
                 
                 if let imageURL = JSON.objectForKey("images")?.objectAtIndex(0).objectForKey("uri150") {
-                    
-                    let url = NSURL(string: imageURL as! String)
-                    let data = NSData(contentsOfURL : url!)
-                    let image = UIImage(data : data!)
-                    
-                    // todo : set image
+                        // TODO: Should retrieve image by URL and set profile image
                     
                 }
                 
                 if let artistName = JSON.objectForKey("name") {
-                    print(artistName)
-                    // todo : set header caption
+                    // TODO : set header
                 }
                 
                 if let artistDescription = JSON.objectForKey("profile") {
-                    print(artistDescription)
-                    // todo : set artist description
+                    // TOFO : set description
                 }
                 
                 if let resourceURL = JSON.objectForKey("releases_url") {
-                    print(resourceURL)
-                    // todo : persist discography url for later use
-                }
+                    // TODO : save resourceURL for later                }
                 
+                }
             }
         }
+    }
+    
+
+    
+    override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
+        return self.resourceURL
     }
     
     override func willActivate() {
